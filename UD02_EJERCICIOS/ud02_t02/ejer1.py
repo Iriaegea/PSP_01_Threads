@@ -8,25 +8,31 @@
 
 import threading
 import time
-estado = False
+
 class miHilo(threading.Thread):
     def __init__(self):
         super().__init__()
 
-    def run():
-        time.sleep(2000)
+    def run(self):
+        try:
+            time.sleep(2) # * 1000
+        except Exception:
+            print(f"Error")
+
 
         
 
 if __name__ == "__main__":
     
-    try:
-        hilo = miHilo()
 
-        print(f"Estado del hilo: {estado}" )
-        hilo.start()
-        estado = True
-        print(f"Estado del hilo: {estado}" )
+    hilo = miHilo()
+
+    print(f"Estado del hilo antes de ejecutarse: {hilo.is_alive()}" )
+    hilo.start()
+   
+    print(f"Estado del hilo en ejecucion: {hilo.is_alive()}" )
+    hilo.join()
+    print(f"Estado del hilo al terminar de ejecutarse: {hilo.is_alive()} ")
 
 
-    except:
+    
