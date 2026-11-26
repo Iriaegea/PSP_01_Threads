@@ -26,7 +26,7 @@ class factorial(threading.Thread):
                  
             
               
-        #  resultado = list(map(lambda n : n* n+1 if n <  , arrayResultado ))
+       
         
 
 class fibonacci(threading.Thread):
